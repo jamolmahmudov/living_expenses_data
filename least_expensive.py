@@ -10,13 +10,15 @@ def least_expensive(file_path: str) -> str:
     Returns:
         str: least expensive item
     """
-    a=0
-    b=0
-    i=0
+
     f=open(file_path)
-    k=json.load(f)
-    b=min(k.values())
-    return b
+    f=json.load(f)
+    a=f['food']
+   
+    for i in f.values():
+        if a>i:
+            a=i
+    return a
 
 # test
 file_path = "data.json"
